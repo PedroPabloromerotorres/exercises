@@ -1,10 +1,11 @@
-#Escribe un programa que verifique si un número es par o impar utilizando if
+#Escribe un programa que determine si una nota numérica es "Aprobado" o "Reprobado" usando if
 
-numero = int(input( "write a number: "))
+nota = float(input("Introduce la nota: "))
 
-if numero % 2 == 0:
-    print(f"{numero} it's even")
+if nota >= 60:
 
+    print("Aprobado")
 
 else:
-    print(f"{numero} is ood ")
+
+    print("Reprobado")
