@@ -1,29 +1,22 @@
-#Utiliza match para implementar una calculadora simple.
+#Escribe un programa que determine el tipo de triángulo en función de sus lados usando if .
 #Enunciado:
-#Crea una calculadora que solicite dos números y una operación matemática (+, -, *, /). Usa match
-#para realizar la operación correspondiente.
+#Solicita al usuario que ingrese las longitudes de los tres lados de un triángulo. Determina si el
+#triángulo es equilátero, isósceles o escaleno
 
-numero1 = float(input("enter the first number: "))
+side1 = float(input("Enter the length of the first side: "))
 
-operacion = input("enter the operator: ")
+side2 = float(input("Enter the length of the second side: "))
 
-numero2 = float(input("enter the second number: "))
+side3 = float(input("Enter the length of the third side: "))
 
-match operacion:
-    case '+':
-        resultado = numero1 + numero2
-        print(f"the result of {numero1} + {numero2} es {resultado}.")
-    case '-':
-        resultado = numero1 - numero2
-        print(f"the result of {numero1} - {numero2} es {resultado}.")
-    case '*':
-        resultado = numero1 * numero2
-        print(f"the result of {numero1} * {numero2} es {resultado}.")
-    case '/':
-        if numero2 != 0:
-            resultado = numero1 / numero2
-            print(f"the result of {numero1} / {numero2} es {resultado}.")
-        else:
-            print("error: cannot divide by zero.")
-    case _:
-        print("Invalid operation. Please enter a valid transaction(+, -, *, /).")
+if side1 == side2 == side3:
+
+    print("The triangle is equilateral.")
+
+elif side1 == side2 or side1 == side3 or side2 == side3:
+
+    print("The triangle is isosceles.")
+
+else:
+
+    print("The triangle is scalene.")
