@@ -1,27 +1,36 @@
-#Escribe un programa que calcule el número de créditos totales de un estudiante en base a las
-#materias cursadas y el puntaje obtenido en cada una. El puntaje debe ser evaluado como
-#aprobado o no aprobado.
+#Escribe un programa que convierta una calificación numérica en una letra de acuerdo a un
+#sistema de calificación específico, usando match .
 #Enunciado:
-#Solicita al usuario ingresar el número de materias que ha cursado. Para cada materia, solicita el
-#puntaje y determina si ha aprobado o no (>= 60). Luego, calcula el número total de créditos del
-#estudiante (cada materia aprobada otorga 3 créditos).
+#Solicita una calificación numérica (0-100) y convierte esa calificación a una letra usando el
+#siguiente esquema:
+#A: 90-100
+#B: 80-89
+#C: 70-79
+#D: 60-69
+#F: 0-59
 
-num_materias = int(input("Ingresa el número de materias que has cursado: "))
+calificacion = float(input("Ingresa tu calificación numérica (0-100): "))
 
-total_creditos = 0
+match calificacion:
 
-for i in range(num_materias):
+    case calificacion if 90 <= calificacion <= 100:
 
-    puntaje = float(input(f"Ingresa el puntaje de la materia {i+1}: "))
-    
-    if puntaje >= 60:
+        letra = "A"
 
-        total_creditos += 3 
+    case calificacion if 80 <= calificacion < 90:
 
-        print(f"Materia {i+1} aprobada. Créditos sumados: 3.")
+        letra = "B"
 
-    else:
+    case calificacion if 70 <= calificacion < 80:
 
-        print(f"Materia {i+1} no aprobada. No se suman créditos.")
+        letra = "C"
 
-print(f"El número total de créditos obtenidos es: {total_creditos}")
+    case calificacion if 60 <= calificacion < 70:
+
+        letra = "D"
+
+    case _:
+        
+        letra = "F"
+
+print(f"Tu calificación en letra es: {letra}")
