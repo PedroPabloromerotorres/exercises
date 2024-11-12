@@ -1,18 +1,16 @@
-#Escribe un programa que solicite al usuario un número entero positivo n y calcule la suma de los
-#primeros n números enteros. Utiliza un ciclo for para realizar la suma.
+#Escribe un programa que solicite al usuario una cadena de texto y cuente cuántas vocales 
+# (a, e, i,o, u) contiene. Usa un ciclo for para recorrer la cadena y realizar la cuenta.
 
-n = int(input("Ingresa un número entero positivo: "))
+texto = input("Ingresa una cadena de texto: ")
 
-if n <= 0:
+contador_vocales = 0
 
-    print("Por favor, ingresa un número entero positivo.")
+vocales = "aeiouAEIOU"
 
-else:
+for caracter in texto:
 
-    suma = 0
-    
-    for i in range(1, n + 1):
+    if caracter in vocales:
+        
+        contador_vocales += 1
 
-        suma += i
-
-    print(f"La suma de los primeros {n} números enteros es: {suma}")
+print(f"La cantidad de vocales en la cadena es: {contador_vocales}")
