@@ -1,21 +1,27 @@
-#Escribe un programa que calcule la calificación final de un estudiante basándose en su calificación
-#y si ha hecho tareas adicionales. Las tareas adicionales pueden darle un extra de puntos, pero el
-#máximo de puntos no puede exceder 100.
+#Escribe un programa que calcule el número de créditos totales de un estudiante en base a las
+#materias cursadas y el puntaje obtenido en cada una. El puntaje debe ser evaluado como
+#aprobado o no aprobado.
 #Enunciado:
-#Solicita la calificación del estudiante y pregunta si hizo tareas adicionales. Si la respuesta es "sí",
-#añade un 5% extra a la calificación, pero si la calificación supera 100, ajústala a 100. Si la respuesta
-#es "no", simplemente muestra la calificación original.
+#Solicita al usuario ingresar el número de materias que ha cursado. Para cada materia, solicita el
+#puntaje y determina si ha aprobado o no (>= 60). Luego, calcula el número total de créditos del
+#estudiante (cada materia aprobada otorga 3 créditos).
 
-calificacion = float(input("Ingresa la calificación del estudiante (0-100): "))
+num_materias = int(input("Ingresa el número de materias que has cursado: "))
 
-tareas_adicionales = input("¿Hizo tareas adicionales? (sí/no): ").strip().lower()
+total_creditos = 0
 
-if tareas_adicionales == "sí":
+for i in range(num_materias):
 
-    calificacion += calificacion * 0.05
+    puntaje = float(input(f"Ingresa el puntaje de la materia {i+1}: "))
+    
+    if puntaje >= 60:
 
-    if calificacion > 100:
-        
-        calificacion = 100
+        total_creditos += 3 
 
-print(f"La calificación final del estudiante es: {calificacion:.2f}")
+        print(f"Materia {i+1} aprobada. Créditos sumados: 3.")
+
+    else:
+
+        print(f"Materia {i+1} no aprobada. No se suman créditos.")
+
+print(f"El número total de créditos obtenidos es: {total_creditos}")
