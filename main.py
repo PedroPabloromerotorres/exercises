@@ -1,26 +1,31 @@
-#Escribe un programa que calcule el costo de estacionamiento basado en el número de horas, con
-#tarifas progresivas.
-#Enunciado:
-#El costo de estacionamiento se calcula de la siguiente manera:
-#Primera hora: $5
-#Segunda a cuarta hora: $4 por hora
-#Más de cuatro horas: $3 por cada hora adicional
-#Solicita al usuario el número de horas de estacionamiento y calcula el costo total.
+#Escribe un programa que clasifique un triángulo en agudo, obtuso o rectángulo según sus ángulos
+#internos usando if .Enunciado:
+#Solicita al usuario los tres ángulos de un triángulo y clasifícalo en:
+#Agudo: Todos los ángulos son menores a 90°.
+#Rectángulo: Un ángulo es exactamente 90°.
+#Obtuso: Un ángulo es mayor a 90°.
 
-horas = int(input("Ingresa el número de horas de estacionamiento: "))
+angulo1 = float(input("Ingresa el primer ángulo del triángulo (en grados): "))
 
-costo_total = 0
+angulo2 = float(input("Ingresa el segundo ángulo del triángulo (en grados): "))
 
-if horas <= 1:
+angulo3 = float(input("Ingresa el tercer ángulo del triángulo (en grados): "))
 
-    costo_total = 5  
+if angulo1 + angulo2 + angulo3 != 180:
 
-elif horas <= 4:
-
-    costo_total = 5 + (horas - 1) * 4 
-
+    print("Los ángulos no forman un triángulo válido, la suma debe ser 180°.")
 else:
-    
-    costo_total = 5 + (3 * 4) + (horas - 4) * 3 
 
-print(f"El costo total de estacionamiento es: ${costo_total}")
+    if angulo1 == 90 or angulo2 == 90 or angulo3 == 90:
+
+        tipo_triangulo = "Rectángulo"
+
+    elif angulo1 > 90 or angulo2 > 90 or angulo3 > 90:
+
+        tipo_triangulo = "Obtuso"
+        
+    else:
+
+        tipo_triangulo = "Agudo"
+
+    print(f"El triángulo es: {tipo_triangulo}")
