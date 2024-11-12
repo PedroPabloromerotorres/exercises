@@ -1,31 +1,21 @@
-#Escribe un programa que calcule el salario neto de un empleado después de aplicar impuestos.
+#Escribe un programa que calcule el tiempo que tarda en llegar un automóvil a su destino.
 #Enunciado:
-#Solicita al usuario su salario bruto y su país de residencia. Calcula el salario neto aplicando
-#impuestos: el 20% para residentes de "País A", el 15% para "País B" y el 10% para "País C". Si el
-#país no está en la lista, aplica un 25% de impuestos.
+#Solicita al usuario la distancia a recorrer (en km) y la velocidad promedio del automóvil (en km/h).
+#Calcula el tiempo de viaje en horas y minutos. Si la velocidad es mayor a 120 km/h, muestra un
+#mensaje de advertencia.
 
-salario_bruto = float(input("Ingresa tu salario bruto: "))
+distancia = float(input("Ingresa la distancia a recorrer en kilómetros: "))
 
-pais = input("Ingresa tu país de residencia (País A, País B, País C): ").strip().title()
+velocidad = float(input("Ingresa la velocidad promedio en km/h: "))
 
-match pais:
+if velocidad > 120:
 
-    case "País A":
+    print("Advertencia: La velocidad es mayor a 120 km/h, ¡ten cuidado!")
 
-        impuestos = 0.20  
+tiempo_horas = distancia / velocidad
 
-    case "País B":
+horas = int(tiempo_horas)
 
-        impuestos = 0.15  
+minutos = int((tiempo_horas - horas) * 60)
 
-    case "País C":
-
-        impuestos = 0.10  
-
-    case _:
-
-        impuestos = 0.25  
-
-salario_neto = salario_bruto * (1 - impuestos)
-
-print(f"Tu salario neto después de impuestos es: {salario_neto:.2f}")
+print(f"El tiempo estimado para llegar a tu destino es: {horas} horas y {minutos} minutos.")
