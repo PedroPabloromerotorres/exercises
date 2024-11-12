@@ -1,16 +1,18 @@
-#Escribe un programa que solicite al usuario una cadena de texto y cuente cuántas vocales 
-# (a, e, i,o, u) contiene. Usa un ciclo for para recorrer la cadena y realizar la cuenta.
+#Escribe un programa que solicite al usuario un número entero positivo n y calcule el factorial de
+#dicho número ( n! = 1 * 2 * 3 * ... * n ). Usa un ciclo for para realizar el cálculo.
 
-texto = input("Ingresa una cadena de texto: ")
+n = int(input("Ingresa un número entero positivo: "))
 
-contador_vocales = 0
+if n < 0:
 
-vocales = "aeiouAEIOU"
+    print("Por favor, ingresa un número entero positivo.")
+    
+else:
 
-for caracter in texto:
+    factorial = 1
+    
+    for i in range(1, n + 1):
 
-    if caracter in vocales:
-        
-        contador_vocales += 1
-
-print(f"La cantidad de vocales en la cadena es: {contador_vocales}")
+        factorial *= i  
+    
+    print(f"El factorial de {n} es: {factorial}")
