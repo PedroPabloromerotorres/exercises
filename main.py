@@ -1,20 +1,25 @@
-#Escribe un programa que solicite al usuario dos números enteros, un valor de inicio y un valor de
-#fin. El programa debe imprimir todos los números pares en ese rango, incluyendo los límites. Usa
-#un ciclo for para recorrer el rango.
+#Escribe un programa que genere un número aleatorio entre 1 y 100 y permita al usuario
+#adivinarlo. El programa debe dar pistas si el número ingresado es mayor o menor que el número
+#secreto. Usa un ciclo while para permitir al usuario seguir intentando hasta que adivine el
+#número
 
 
-inicio = int(input("Ingresa el valor de inicio: "))
+import random
 
-fin = int(input("Ingresa el valor de fin: "))
+numero_secreto = random.randint(1, 100)
 
-if inicio > fin:
+adivinanza = None
 
-    print("El valor de inicio debe ser menor o igual al valor de fin.")
+while adivinanza != numero_secreto:
 
-else:
-   
-    for i in range(inicio, fin + 1):
+    adivinanza = int(input("Adivina el número entre 1 y 100: "))
 
-        if i % 2 == 0:  
+    if adivinanza < numero_secreto:
 
-            print(i)
+        print("El número secreto es mayor. Intenta de nuevo.")
+
+    elif adivinanza > numero_secreto:
+        
+        print("El número secreto es menor. Intenta de nuevo.")
+    
+print(f"¡Felicidades! Has adivinado el número secreto: {numero_secreto}")
