@@ -1,31 +1,18 @@
-#Escribe un programa que clasifique un triángulo en agudo, obtuso o rectángulo según sus ángulos
-#internos usando if .Enunciado:
-#Solicita al usuario los tres ángulos de un triángulo y clasifícalo en:
-#Agudo: Todos los ángulos son menores a 90°.
-#Rectángulo: Un ángulo es exactamente 90°.
-#Obtuso: Un ángulo es mayor a 90°.
+#Escribe un programa que solicite al usuario un número entero positivo n y calcule la suma de los
+#primeros n números enteros. Utiliza un ciclo for para realizar la suma.
 
-angulo1 = float(input("Ingresa el primer ángulo del triángulo (en grados): "))
+n = int(input("Ingresa un número entero positivo: "))
 
-angulo2 = float(input("Ingresa el segundo ángulo del triángulo (en grados): "))
+if n <= 0:
 
-angulo3 = float(input("Ingresa el tercer ángulo del triángulo (en grados): "))
+    print("Por favor, ingresa un número entero positivo.")
 
-if angulo1 + angulo2 + angulo3 != 180:
-
-    print("Los ángulos no forman un triángulo válido, la suma debe ser 180°.")
 else:
 
-    if angulo1 == 90 or angulo2 == 90 or angulo3 == 90:
+    suma = 0
+    
+    for i in range(1, n + 1):
 
-        tipo_triangulo = "Rectángulo"
+        suma += i
 
-    elif angulo1 > 90 or angulo2 > 90 or angulo3 > 90:
-
-        tipo_triangulo = "Obtuso"
-        
-    else:
-
-        tipo_triangulo = "Agudo"
-
-    print(f"El triángulo es: {tipo_triangulo}")
+    print(f"La suma de los primeros {n} números enteros es: {suma}")
