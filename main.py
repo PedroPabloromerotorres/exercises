@@ -1,25 +1,19 @@
-#Escribe un programa que genere un número aleatorio entre 1 y 100 y permita al usuario
-#adivinarlo. El programa debe dar pistas si el número ingresado es mayor o menor que el número
-#secreto. Usa un ciclo while para permitir al usuario seguir intentando hasta que adivine el
-#número
+#Escribe un programa que solicite al usuario ingresar números enteros indefinidamente. El
+#programa debe sumar los números siempre que sean pares, pero debe detenerse si el usuario
+#ingresa un número impar. Usa un ciclo while para lograr esto.
 
+suma = 0
 
-import random
+while True:
 
-numero_secreto = random.randint(1, 100)
-
-adivinanza = None
-
-while adivinanza != numero_secreto:
-
-    adivinanza = int(input("Adivina el número entre 1 y 100: "))
-
-    if adivinanza < numero_secreto:
-
-        print("El número secreto es mayor. Intenta de nuevo.")
-
-    elif adivinanza > numero_secreto:
-        
-        print("El número secreto es menor. Intenta de nuevo.")
+    numero = int(input("Ingresa un número entero (o un número impar para detener): "))
     
-print(f"¡Felicidades! Has adivinado el número secreto: {numero_secreto}")
+    if numero % 2 != 0:
+
+        print("Número impar detectado. El programa se detendrá.")
+        
+        break
+  
+    suma += numero
+
+print(f"La suma de los números pares es: {suma}")
