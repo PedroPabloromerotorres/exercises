@@ -1,21 +1,21 @@
-#Escribe un programa que calcule el tiempo que tarda en llegar un automóvil a su destino.
+#Escribe un programa que calcule la calificación final de un estudiante basándose en su calificación
+#y si ha hecho tareas adicionales. Las tareas adicionales pueden darle un extra de puntos, pero el
+#máximo de puntos no puede exceder 100.
 #Enunciado:
-#Solicita al usuario la distancia a recorrer (en km) y la velocidad promedio del automóvil (en km/h).
-#Calcula el tiempo de viaje en horas y minutos. Si la velocidad es mayor a 120 km/h, muestra un
-#mensaje de advertencia.
+#Solicita la calificación del estudiante y pregunta si hizo tareas adicionales. Si la respuesta es "sí",
+#añade un 5% extra a la calificación, pero si la calificación supera 100, ajústala a 100. Si la respuesta
+#es "no", simplemente muestra la calificación original.
 
-distancia = float(input("Ingresa la distancia a recorrer en kilómetros: "))
+calificacion = float(input("Ingresa la calificación del estudiante (0-100): "))
 
-velocidad = float(input("Ingresa la velocidad promedio en km/h: "))
+tareas_adicionales = input("¿Hizo tareas adicionales? (sí/no): ").strip().lower()
 
-if velocidad > 120:
+if tareas_adicionales == "sí":
 
-    print("Advertencia: La velocidad es mayor a 120 km/h, ¡ten cuidado!")
+    calificacion += calificacion * 0.05
 
-tiempo_horas = distancia / velocidad
+    if calificacion > 100:
+        
+        calificacion = 100
 
-horas = int(tiempo_horas)
-
-minutos = int((tiempo_horas - horas) * 60)
-
-print(f"El tiempo estimado para llegar a tu destino es: {horas} horas y {minutos} minutos.")
+print(f"La calificación final del estudiante es: {calificacion:.2f}")
