@@ -1,29 +1,23 @@
-#Escribe un programa que calcule el IMC y determine el estado de peso.Enunciado:
-#Solicita al usuario su peso (en kg) y su altura (en metros). Calcula el IMC y clasifícalo en bajo peso
-#(<18.5), peso normal (18.5-24.9), sobrepeso (25-29.9), o obesidad (>=30).
+#Escribe un programa que determine el mayor de tres números usando if .
+#Enunciado:
+#Solicita al usuario que ingrese tres números y determina cuál es el mayor.
 
-peso = float(input("Ingresa tu peso en kilogramos: "))
+numero1 = float(input("Ingresa el primer número: "))
 
-altura = float(input("Ingresa tu altura en metros: "))
+numero2 = float(input("Ingresa el segundo número: "))
 
-imc = peso / (altura ** 2)
+numero3 = float(input("Ingresa el tercer número: "))
 
-if imc < 18.5:
+if numero1 >= numero2 and numero1 >= numero3:
 
-    clasificacion = "Bajo peso" 
+    mayor = numero1
 
-elif 18.5 <= imc <= 24.9:
+elif numero2 >= numero1 and numero2 >= numero3:
 
-    clasificacion = "Peso normal"
+    mayor = numero2
 
-elif 25 <= imc <= 29.9:
-
-    clasificacion = "Sobrepeso"
-    
 else:
     
-    clasificacion = "Obesidad"
+    mayor = numero3
 
-print(f"Tu IMC es: {imc:.2f}")
-
-print(f"Estado de peso: {clasificacion}")
+print(f"El número mayor es: {mayor}")
